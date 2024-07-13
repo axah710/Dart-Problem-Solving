@@ -1,3 +1,22 @@
+/// This code demonstrates how to extract even numbers from a list of integers
+/// and store them in a new list.
+///
+/// The `main()` function is the entry point of the program. It performs the
+/// following steps:
+///
+/// 1. Declares and initializes a list of integers named `numbersGroup`
+/// containing numbers from 1 to 10.
+/// 2. Declares an empty list named `evenNumbers` to store the even numbers
+/// extracted from `numbersGroup`.
+/// 3. Iterates over each element in the `numbersGroup` list using a `for` loop.
+/// 4. Inside the loop, checks if the current element is even using the `
+/// isEven` property.
+/// 5. If the current element is even, it is added to the `evenNumbers` list.
+/// 6. After the loop, checks if the `evenNumbers` list is not empty.
+/// 7. If `evenNumbers` is not empty, it prints the even numbers added from the
+/// `numbersGroup` list.
+/// 8. If `evenNumbers` is empty, it prints a message indicating that no even
+/// numbers were added from the `numbersGroup` list.
 void main() {
   List<int> numbersGroup = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   // Here, we declare and initialize a list of integers named numbersGroup. This
