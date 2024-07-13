@@ -1,5 +1,13 @@
-import 'dart:io';
 
+import 'dart:io';
+/// This is the main entry point of the program. It prompts the user to enter a number,
+/// and then calculates and prints the divisors of that number.
+///
+/// The program starts by printing "Program Start", then waits for 1 second before
+/// prompting the user to enter a number. The user is prompted to enter a valid
+/// integer greater than 1. Once a valid input is received, the program finds all
+/// the divisors of the number and prints them to the console. After 3 seconds,
+/// the program prints "Program End" and exits.
 main() async {
   print("Program Start");
   await Future.delayed(
