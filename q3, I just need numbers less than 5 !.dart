@@ -1,3 +1,13 @@
+/// This code demonstrates two different approaches to finding and printing the
+/// numbers less than 5 in a list of integers.
+///
+/// The first approach sorts the list and then iterates through it, printing the
+/// numbers less than 5 and breaking out of the loop if no such numbers are found.
+///
+/// The second approach iterates through the list and prints the numbers less
+/// than 5 and their indices, breaking out of the loop if no such numbers are found.
+///
+/// If the list is empty, the code prints "List Is Empty!".
 void main() {
   List<int> list = [1, 1, 3, 5, 8, 13, 21, 34, 55, 89];
   // This line initializes a list of integers with values from the Fibonacci sequence.
