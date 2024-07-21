@@ -1,7 +1,6 @@
 # Dart Problem Solving
 
 ![GitHub](https://img.shields.io/badge/GitHub-Dart%20Problem%20Solving-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
 A collection of Dart programming exercises focusing on problem-solving and algorithm development.
