@@ -6,14 +6,6 @@
 ///
 
 import 'dart:io';
-
-
-
-
-
-
-
-
 void main() {
   var userInputWord;
   // userInputWord: A variable to hold the user's input.
