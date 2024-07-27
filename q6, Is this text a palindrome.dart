@@ -7,13 +7,14 @@ void main() {
   // joinedReversedSplittedLoweCaseUserInputWord: A nullable string to store the reversed and joined lowercase version of the user's input after processing.
   String? loweCaseUserInputWord;
   // loweCaseUserInputWord: A nullable string to store the lowercase version of the user's input.
-  final RegExp unwantedCharacthers = RegExp(r'[^a-zA-Z0-9]');
+  final RegExp unwantedCharacthers = RegExp(r'[^a-zA-Z0-9 ]');
   // unwantedCharacthers: A regular expression pattern to match any character that is not a letter or a number.
 
   do {
-    stdout.write("Writa a text: ");
+    stdout.write("Write a text: ");
     // stdout.write("Writa a text: "): Displays a message asking the user to write a text.
     userInputWord = stdin.readLineSync();
+
     // userInputWord = stdin.readLineSync(): Reads the input from the user.
     loweCaseUserInputWord = userInputWord!.toLowerCase();
     // loweCaseUserInputWord = userInputWord!.toLowerCase(): Converts the user input to lowercase.
@@ -38,20 +39,18 @@ void main() {
 // then exits the application using exit(0).
 }
 
-
-
 String? userInputValidationAndProcessing(
     // This function takes the user's input, the lowercase version of it, the regular expression for unwanted characters, and the variable for the processed string as parameters.
     userInputWord,
-    String? loweCaseUserInputWord,
-    RegExp unwantedCharacthers,
-    String? joinedReversedSplittedLoweCaseUserInputWord) {
+    loweCaseUserInputWord,
+    unwantedCharacthers,
+    joinedReversedSplittedLoweCaseUserInputWord) {
   if (!(userInputWord == "" ||
       userInputWord.length <= 1 ||
       loweCaseUserInputWord!.contains(unwantedCharacthers))) {
     // This if statement checks if the user input is valid (non-empty, longer than 1 character, and without unwanted characters).
     List<String> splittedLoweCaseUserInputWord =
-        loweCaseUserInputWord.split("");
+        loweCaseUserInputWord!.split("");
     // loweCaseUserInputWord.split(""): Splits the lowercase user input into a list of individual characters.
     final reversedSplittedLoweCaseUserInputWord =
         splittedLoweCaseUserInputWord.reversed;
@@ -71,6 +70,7 @@ String? userInputValidationAndProcessing(
   return joinedReversedSplittedLoweCaseUserInputWord;
   // The function returns the processed string (reversed and joined version of the lowercase input) if the input is valid.
 }
+
 void terminateProgram() {
   Future.delayed(
       const Duration(
