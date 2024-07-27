@@ -1,4 +1,18 @@
+/// Checks if the user's input is a palindrome.
+///
+/// This function prompts the user to enter a text, validates the input, and
+/// then checks if the text is a palindrome. It handles cases where the input
+/// is empty, too short, or contains unwanted characters.
+///
+
 import 'dart:io';
+
+
+
+
+
+
+
 
 void main() {
   var userInputWord;
