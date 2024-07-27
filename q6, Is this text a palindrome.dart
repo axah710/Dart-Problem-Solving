@@ -40,7 +40,7 @@ String? userInputValidationAndProcessing(
     userInputWord,
     loweCaseUserInputWord,
     unwantedCharacthers,
-    joinedReversedSplittedLoweCaseUserInputWord) {
+    joinedReversedSplittedLowerCaseUserInputWord) {
   if (!(userInputWord == "" ||
       userInputWord.length <= 1 ||
       loweCaseUserInputWord!.contains(unwantedCharacthers))) {
@@ -51,7 +51,7 @@ String? userInputValidationAndProcessing(
     final reversedSplittedLoweCaseUserInputWord =
         splittedLoweCaseUserInputWord.reversed;
     // splittedLoweCaseUserInputWord.reversed: Reverses the list of characters.
-    joinedReversedSplittedLoweCaseUserInputWord =
+    joinedReversedSplittedLowerCaseUserInputWord =
         reversedSplittedLoweCaseUserInputWord.join();
     // reversedSplittedLoweCaseUserInputWord.join(): Joins the reversed list of characters back into a single string.
   } else if (userInputWord == "") {
@@ -63,7 +63,7 @@ String? userInputValidationAndProcessing(
   }
   // These else if statements provide feedback to the user if their input is invalid.
 // It prints specific messages based on whether the input is empty, too short, or contains unwanted characters.
-  return joinedReversedSplittedLoweCaseUserInputWord;
+  return joinedReversedSplittedLowerCaseUserInputWord;
   // The function returns the processed string (reversed and joined version of the lowercase input) if the input is valid.
 }
 
