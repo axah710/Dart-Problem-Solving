@@ -5,7 +5,7 @@ void main() {
   // userInputWord: A variable to hold the user's input.
   String? joinedReversedSplittedLoweCaseUserInputWord;
   // joinedReversedSplittedLoweCaseUserInputWord: A nullable string to store the reversed and joined lowercase version of the user's input after processing.
-  String? loweCaseUserInputWord;
+  String? lowerCaseUserInputWord;
   // loweCaseUserInputWord: A nullable string to store the lowercase version of the user's input.
   final RegExp unwantedCharacthers = RegExp(r'[^a-zA-Z0-9 ]');
   // unwantedCharacthers: A regular expression pattern to match any character that is not a letter or a number.
@@ -16,27 +16,23 @@ void main() {
     userInputWord = stdin.readLineSync();
 
     // userInputWord = stdin.readLineSync(): Reads the input from the user.
-    loweCaseUserInputWord = userInputWord!.toLowerCase();
+    lowerCaseUserInputWord = userInputWord!.toLowerCase();
     // loweCaseUserInputWord = userInputWord!.toLowerCase(): Converts the user input to lowercase.
 
     joinedReversedSplittedLoweCaseUserInputWord =
-        userInputValidationAndProcessing(userInputWord, loweCaseUserInputWord,
+        userInputValidationAndProcessing(userInputWord, lowerCaseUserInputWord,
             unwantedCharacthers, joinedReversedSplittedLoweCaseUserInputWord);
   } while (userInputWord == "" ||
       userInputWord.length <= 1 ||
-      loweCaseUserInputWord!.contains(unwantedCharacthers));
+      lowerCaseUserInputWord!.contains(unwantedCharacthers));
   // The do-while loop continues to prompt the user until they enter a valid text (non-empty, longer than 1 character, and without unwanted characters).
-  joinedReversedSplittedLoweCaseUserInputWord! == loweCaseUserInputWord
+  joinedReversedSplittedLoweCaseUserInputWord! == lowerCaseUserInputWord
       ? print("It's a palindrome")
       : print("It's not a palindrome");
   // After obtaining a valid input, the program checks if the processed (reversed and joined) version of the input matches the original lowercase input.
   // If they match, it prints "It's a palindrome"; otherwise, it prints "It's not a palindrome".
   terminateProgram();
-//  This block of code schedules a delayed operation:
-// Future.delayed creates a future that completes after a specified duration
-// (3 seconds in this case).
-// After the delay, it prints a message indicating the app will terminate and
-// then exits the application using exit(0).
+
 }
 
 String? userInputValidationAndProcessing(
