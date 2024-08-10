@@ -22,17 +22,7 @@ void main() {
     // birthYear is not within the range of 1900 to 2025.
     print("Enter your birth year:");
     // asks the user to input their birth year.
-    try {
-      birthYear = int.parse(stdin.readLineSync()!);
-      //  reads the user's input from the console, converts it to an integer
-      //  using int.parse, and assigns it to the birthYear variable.
-    } catch (e) {
-      print("Please enter a valid birth year.");
-      // If the user enters an invalid year (e.g., non-numeric input), the
-      // catch block will catch the exception and print "Please enter a
-      // valid birth year." without crashing the program. The loop then
-      // repeats until a valid year is entered.
-    }
+    birthYear = enterBirthYearTryAndCatchBlock(birthYear);
   }
 
   while (currentYear <= birthYear) {
@@ -40,24 +30,43 @@ void main() {
     // than the birthYear.
     print("Enter current year:");
     // asks the user to input the current year.
-    try {
-      currentYear = int.parse(stdin.readLineSync()!);
-      // reads the user's input and converts it to an integer.
-      if (currentYear > birthYear) {
-        int age = currentYear - birthYear;
-        print("Your age is $age");
-        //  If the currentYear is greater than the birthYear, it calculates
-        // the age using int age = currentYear - birthYear; and prints the
-        // result with print("Your age is $age");.
-      } else {
-        print("Current year must be greater than birth year.");
-        // If the currentYear is not greater than birthYear, it prints "Current
-        // year must be greater than birth year.".
-      }
-    } catch (e) {
-      print("Please enter a valid current year.");
-      // If the input is invalid, the catch block handles the error and prints
-      //  "Please enter a valid current year.".
-    }
+    enterCurrentYearTryAndCatchBlock(currentYear, birthYear);
   }
+}
+
+void enterCurrentYearTryAndCatchBlock(int currentYear, int birthYear) {
+  try {
+    currentYear = int.parse(stdin.readLineSync()!);
+    // reads the user's input and converts it to an integer.
+    if (currentYear > birthYear) {
+      int age = currentYear - birthYear;
+      print("Your age is $age");
+      //  If the currentYear is greater than the birthYear, it calculates
+      // the age using int age = currentYear - birthYear; and prints the
+      // result with print("Your age is $age");.
+    } else {
+      print("Current year must be greater than birth year.");
+      // If the currentYear is not greater than birthYear, it prints "Current
+      // year must be greater than birth year.".
+    }
+  } catch (e) {
+    print("Please enter a valid current year.");
+    // If the input is invalid, the catch block handles the error and prints
+    //  "Please enter a valid current year.".
+  }
+}
+
+int enterBirthYearTryAndCatchBlock(int birthYear) {
+  try {
+    birthYear = int.parse(stdin.readLineSync()!);
+    //  reads the user's input from the console, converts it to an integer
+    //  using int.parse, and assigns it to the birthYear variable.
+  } catch (e) {
+    print("Please enter a valid birth year.");
+    // If the user enters an invalid year (e.g., non-numeric input), the
+    // catch block will catch the exception and print "Please enter a
+    // valid birth year." without crashing the program. The loop then
+    // repeats until a valid year is entered.
+  }
+  return birthYear;
 }
